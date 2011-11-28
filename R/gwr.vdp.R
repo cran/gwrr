@@ -1,5 +1,5 @@
 gwr.vdp <-
-function(form, locs, data, phi, kernel="exp", sel.ci=30, sel.vdp=0.5){
+function(form, coords, data, phi, kernel="exp", sel.ci=30, sel.vdp=0.5){
    # Parse variables in formula to pass to function
    rhs <- as.character(form)[3]
    rhs.v <- strsplit(rhs, " + ", fixed=TRUE)   # Returns a list with 1 first element, unknown 2 elements
@@ -13,7 +13,7 @@ function(form, locs, data, phi, kernel="exp", sel.ci=30, sel.vdp=0.5){
    
    # Calculate pairwise distances
    library(fields)   
-   S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
+   S <- rdist(coords)   # Assume Euclidean distance is appropriate for now
 
    if (kernel == "exp") W <- w.exp(phi, S)
    if (kernel == "gauss") W <- w.gauss(phi,S)

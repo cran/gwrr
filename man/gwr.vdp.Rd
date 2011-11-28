@@ -8,14 +8,14 @@ Uses the collinearity diagnostic tools of variance-decomposition proportions and
 geographically weighted regression (GWR) models.
 }
 \usage{
-gwr.vdp(form, locs, data, phi, kernel = "exp", sel.ci = 30, sel.vdp = 0.5)
+gwr.vdp(form, coords, data, phi, kernel = "exp", sel.ci = 30, sel.vdp = 0.5)
 }
 
 \arguments{
   \item{form}{
   A regression model forumula, as in the functions lm and glm
 }
-  \item{locs}{
+  \item{coords}{
   A matrix of spatial coordinates of data points, where the x coordinate is first, then the y coordinate;
   coordinates are assumed to not be latitude and longitude, as Euclidean distance is calculated from coordinates
 }

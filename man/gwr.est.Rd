@@ -7,14 +7,14 @@ Geographically weighted regression
 This function fits a geographically weighted regression (GWR) model
 }
 \usage{
-gwr.est(form, locs, data, kernel = "exp", bw = TRUE, cv.tol)
+gwr.est(form, coords, data, kernel = "exp", bw = TRUE, cv.tol)
 }
 
 \arguments{
   \item{form}{
   A regression model forumula, as in the functions lm and glm
 }
-  \item{locs}{
+  \item{coords}{
   A matrix of spatial coordinates of data points, where the x coordinate is first, then the y coordinate;
   coordinates are assumed to not be latitude and longitude, as Euclidean distance is calculated from coordinates
 }

@@ -15,7 +15,7 @@ function(form, coords, data, kernel="exp", cv.tol){
    
    # Calculate pairwise distances
    library(fields)   
-   S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
+   S <- rdist(coords)   # Assume Euclidean distance is appropriate for now
    
    # Set boundaries and tolerances for CV
    band.ub <- ceiling(max(S))
@@ -59,11 +59,11 @@ function(form, coords, data, kernel="exp", cv.tol){
 
    # Check bounds
    if (RMSE.lb < RMSE.c){
-      c <- lb
+      c <- band.lb
       RMSE.c <- RMSE.lb
    }
    if (RMSE.ub < RMSE.c){
-      c <- ub
+      c <- band.ub
       RMSE.c <- RMSE.ub
    }
    print(paste("Bandwidth: ", format(c,digits=4), " RMSPE :", format(RMSE.c,digits=4)))

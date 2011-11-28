@@ -1,5 +1,5 @@
 gwr.est <-
-function(form, locs, data, kernel="exp", bw=TRUE, cv.tol){   # User-called function
+function(form, coords, data, kernel="exp", bw=TRUE, cv.tol){   # User-called function
    # Parse variables in formula to pass to function
    lhs <- as.character(form)[2]
    rhs <- as.character(form)[3]
@@ -15,7 +15,7 @@ function(form, locs, data, kernel="exp", bw=TRUE, cv.tol){   # User-called funct
 
    # Calculate pairwise distances
    library(fields)   
-   S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
+   S <- rdist(coords)   # Assume Euclidean distance is appropriate for now
 
    rmspe <- NA   # RMSPE for CV, return NA if bandwidth is input
       
