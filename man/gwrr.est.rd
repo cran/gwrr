@@ -1,14 +1,14 @@
-\name{gwr.est}
-\alias{gwr.est}
+\name{gwrr.est}
+\alias{gwrr.est}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Geographically weighted regression
+Geographically weighted ridge regression
 }
 \description{
-This function fits a geographically weighted regression (GWR) model
+This function fits a geographically weighted ridge regression (GWRR) model
 }
 \usage{
-gwr.est(form, locs, data, kernel = "exp", bw = TRUE, cv.tol)
+gwrr.est(form, locs, data, kernel = "exp", bw = TRUE, rd = TRUE, cv.tol)
 }
 
 \arguments{
@@ -29,22 +29,28 @@ gwr.est(form, locs, data, kernel = "exp", bw = TRUE, cv.tol)
   Either TRUE to estimate a bandwidth for the kernel function, or the bandwidth to use to fit the model;
   bandwidth is estimated by default
 }
+  \item{rd}{
+  Either TRUE to estimate a ridge shrinkage parameter, or the ridge parameter to use to fit the model;
+  ridge parameter is estimated by default
+}
   \item{cv.tol}{
   A stopping tolerance in terms of cross-validation error for the bi-section search routine to estimate the kernel bandwidth using cross-validation;
   if missing an internally calculated value is used   
 }
 }
 \details{
-This function estimates spatially varying coefficients using the GWR approach.
+This function estimates penalized spatially varying coefficients using the GWR and ridge regression approaches.
 Spatial kernel weights are applied to observations using the estimated or supplied kernel bandwidth to 
-estimate local models at each data point. The bandwidth is currently estimated with cross-validation with
-an exponential or Gaussian kernel function. The function estimates regression coefficients, the 
+estimate local models at each data point. The bandwidth is estimated with cross-validation with
+an exponential or Gaussian kernel function. The regression coefficients are penalized with a ridge parameter
+that is estimated with cross-validation. The function estimates regression coefficients, the 
 outcome variable values, and the model fit.
 }
 \value{
  A list with the following items:
 
   \item{phi }{Kernel bandwidth}
+  \item{lambda }{Ridge shrinkage parameter}
   \item{RMSPE }{Root mean squared prediction error from bandwidth estimation}
   \item{beta }{Matrix of estimated regression coefficients, where a row contains the coefficients
   for one regression term for all data points}
@@ -63,14 +69,15 @@ David Wheeler
 
 
 \seealso{
-  \code{\link{gwr.bw.est}}
+  \code{\link{gwr.est}}
 }
 \examples{
 data(columbus)
 locs <- cbind(columbus$x, columbus$y)
-col.gwr <- gwr.est(crime ~ income + houseval, locs, columbus, "exp")
-plot(col.gwr$beta[2,], col.gwr$beta[3,])
-plot(columbus$x, columbus$y, cex=col.gwr$beta[1,]/10)
+col.gwrr <- gwrr.est(crime ~ income + houseval, locs, columbus, "exp", bw=2.00, rd=0.03)
+plot(col.gwrr$beta[2,], col.gwrr$beta[3,])
+plot(columbus$x, columbus$y, cex=col.gwrr$beta[1,]/10)
+col.gwr <- gwrr.est(crime ~ income + houseval, locs, columbus, "exp", bw=col.gwrr$phi, rd=0)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

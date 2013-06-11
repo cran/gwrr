@@ -1,5 +1,6 @@
 \name{gwr.vdp}
 \alias{gwr.vdp}
+%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Collinearity diagnostics for geographically weighted regression
 }
@@ -8,14 +9,14 @@ Uses the collinearity diagnostic tools of variance-decomposition proportions and
 geographically weighted regression (GWR) models.
 }
 \usage{
-gwr.vdp(form, coords, data, phi, kernel = "exp", sel.ci = 30, sel.vdp = 0.5)
+gwr.vdp(form, locs, data, phi, kernel = "exp", sel.ci = 30, sel.vdp = 0.5)
 }
 
 \arguments{
   \item{form}{
   A regression model forumula, as in the functions lm and glm
 }
-  \item{coords}{
+  \item{locs}{
   A matrix of spatial coordinates of data points, where the x coordinate is first, then the y coordinate;
   coordinates are assumed to not be latitude and longitude, as Euclidean distance is calculated from coordinates
 }
@@ -56,14 +57,13 @@ collinearity.
 }
 \references{
 Wheeler DC (2007) Diagnostic tools and a remedial method for collinearity in geographically weighted regression.
-Environment and Planning A, 39: 2464-2481.
-
-Fotheringham AS, Brunsdon C, Charlton M (2002) Geographically weighted regression: The analysis of spatially varying relationships. 
-John Wiley & Sons, West Sussex. 
+Environment and Planning A, 39: 2464-2481 
 }
 \author{
 David Wheeler
 }
+
+
 
 \seealso{
   \code{\link{gwr.bw.est}}
@@ -78,4 +78,5 @@ hist(col.vdp$condition)
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ gwr }
+\keyword{multivariate}
+

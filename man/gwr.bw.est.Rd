@@ -8,14 +8,14 @@ Cross-validation estimation of kernel bandwidth
 Estimate the kernel function bandwidth with cross-validation
 }
 \usage{
-gwr.bw.est(form, coords, data, kernel = "exp", cv.tol)
+gwr.bw.est(form, locs, data, kernel = "exp", cv.tol)
 }
 
 \arguments{
   \item{form}{
   A regression model forumula, as in the functions lm and glm
 }
-  \item{coords}{
+  \item{locs}{
   A matrix of spatial coordinates of data points, where the x coordinate is first, then the y coordinate;
   coordinates are assumed to not be latitude and longitude, as Euclidean distance is calculated from coordinates
 }
@@ -43,14 +43,12 @@ It does not estimate the final regression coefficients or outcome variable.
 }
 \references{
 Wheeler DC (2007) Diagnostic tools and a remedial method for collinearity in geographically weighted regression.
-Environment and Planning A, 39: 2464-2481.
-
-Fotheringham AS, Brunsdon C, Charlton M (2002) Geographically weighted regression: The analysis of spatially varying relationships. 
-John Wiley & Sons, West Sussex. 
+Environment and Planning A, 39: 2464-2481 
 }
 \author{
 David Wheeler
 }
+
 
 \seealso{
   \code{\link{gwr.est}}
@@ -60,10 +58,9 @@ data(columbus)
 locs <- cbind(columbus$x, columbus$y)
 col.bw <- gwr.bw.est(crime ~ income + houseval, locs, columbus, "exp")
 col.gwr <- gwr.est(crime ~ income + houseval, locs, columbus, "exp", bw=col.bw$phi)
-cor(col.gwr$beta[2,], col.gwr$beta[3,])
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ gwr }
+\keyword{models}
 

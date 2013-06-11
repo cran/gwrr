@@ -7,13 +7,14 @@ Geographically weighted regression models with penalties and diagnostic tools
 }
 \description{
 Fits geographically weighted regression (GWR) models and has tools to diagnose collinearity in the GWR models.
+Also fits geographically weighted ridge regression (GWRR) and geographically weighted lasso (GWL) models.
 }
 \details{
 \tabular{ll}{
 Package: \tab gwrr\cr
 Type: \tab Package\cr
-Version: \tab 0.1-2\cr
-Date: \tab 2011-11-28\cr
+Version: \tab 0.2-1\cr
+Date: \tab 2013-06-11\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -27,10 +28,10 @@ Maintainer: David Wheeler <dcwheels@gmail.com>
 }
 \references{
 Wheeler DC (2007) Diagnostic tools and a remedial method for collinearity in geographically weighted regression.
-Environment and Planning A, 39: 2464-2481. 
+Environment and Planning A, 39: 2464-2481.
 
-Fotheringham AS, Brunsdon C, Charlton M (2002) Geographically weighted regression: The analysis of spatially varying relationships. 
-John Wiley & Sons, West Sussex.
+Wheeler DC (2009) Simultaneous coefficient penalization and model selection in geographically weighted regression: 
+The geographically weighted lasso. Environment and Planning A, 41: 722-742. 
 }
 
 \keyword{ package }

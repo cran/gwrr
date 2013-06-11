@@ -1,5 +1,5 @@
 gwr.bw.est <-
-function(form, coords, data, kernel="exp", cv.tol){
+function(form, locs, data, kernel="exp", cv.tol){
    # Parse variables in formula to pass to function
    lhs <- as.character(form)[2]
    rhs <- as.character(form)[3]
@@ -15,7 +15,7 @@ function(form, coords, data, kernel="exp", cv.tol){
    
    # Calculate pairwise distances
    library(fields)   
-   S <- rdist(coords)   # Assume Euclidean distance is appropriate for now
+   S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
    
    # Set boundaries and tolerances for CV
    band.ub <- ceiling(max(S))
