@@ -12,7 +12,7 @@ function(form, locs, data, phi, kernel="exp", sel.ci=30, sel.vdp=0.5){
    for(i in 1:n.l) X <- cbind(X, db[,rhs.v[[1]][i]])
    
    # Calculate pairwise distances
-   library(fields)   
+   #library(fields)   
    S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
 
    if (kernel == "exp") W <- w.exp(phi, S)

@@ -1,10 +1,10 @@
-c2ca8de4396d7e41fdee6cc71b3a3a18 *DESCRIPTION
-5ef27e530a7ad63384eba0f5beb77fe6 *NAMESPACE
-ad40140eae46a355e7aabda8555d0e9c *R/gwl.est.r
-680466cb8c4ffdba390ca44b72fb0b9c *R/gwr.bw.est.R
-320698f0bb22fb92f8dc5cc9fa82d1c7 *R/gwr.est.R
-caac59106793b28d891c90fbb8671b29 *R/gwr.vdp.R
-b8005d9e52f0475ea2153879ca2576ee *R/gwrr.est.R
+02ba2602f9c73ab7fc8b4352667e858b *DESCRIPTION
+2ca16bec612f79349f1bac7c22399ce9 *NAMESPACE
+c9015ac58d591149b7652c86ca4e7573 *R/gwl.est.r
+78038f9e89dadb56e8c0c65dbcb327a9 *R/gwr.bw.est.R
+db4633a05000701544ac1134d74119c0 *R/gwr.est.R
+f03b6ded385ee4c9b3ba4454ab811a79 *R/gwr.vdp.R
+892dce3da04c3535f9699d9b2e2fb9bb *R/gwrr.est.R
 ed12e53e9c958ce9f47c15e81cfa507b *R/gwrr_helpers.R
 d3ccb694a2f031f46fc91e0f5104d29b *data/columbus.rda
 261ac2a880d2434244fdb7a24b0af4c7 *man/columbus.Rd

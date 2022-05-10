@@ -1,4 +1,7 @@
 export(gwr.est, gwr.bw.est, gwr.vdp, gwrr.est, gwl.est)
-importFrom(fields, rdist)
+importFrom("stats", "cor", "lm")
+importFrom("fields", "rdist")
+importFrom("lars", "lars")
+
 
 

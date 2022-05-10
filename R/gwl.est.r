@@ -14,11 +14,11 @@ function(form, locs, data, kernel="exp", cv.tol){   # User-called function
    for(i in 1:n.l) X <- cbind(X, db[,rhs.v[[1]][i]])
 
    # Calculate pairwise distances
-   library(fields)   
+   #library(fields)   
    S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
 
    rmspe <- NA   # set RMSPE for CV
-   library(lars)
+   #library(lars)
       
    # Always estimate bandwidth and lasso solution
    band.ub <- ceiling(max(S))

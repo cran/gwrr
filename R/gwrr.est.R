@@ -14,7 +14,7 @@ function(form, locs, data, kernel="exp", bw=TRUE, rd=TRUE, cv.tol){   # User-cal
    for(i in 1:n.l) X <- cbind(X, db[,rhs.v[[1]][i]])
 
    # Calculate pairwise distances
-   library(fields)   
+   #library(fields)   
    S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
 
    rmspe <- NA   # RMSPE for CV, return NA if bandwidth and ridge are input

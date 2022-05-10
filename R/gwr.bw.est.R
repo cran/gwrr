@@ -14,7 +14,7 @@ function(form, locs, data, kernel="exp", cv.tol){
    for(i in 1:n.l) X <- cbind(X, db[,rhs.v[[1]][i]])
    
    # Calculate pairwise distances
-   library(fields)   
+   #library(fields)   
    S <- rdist(locs)   # Assume Euclidean distance is appropriate for now
    
    # Set boundaries and tolerances for CV
